@@ -38,9 +38,9 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:clickable="true"
-            android:focusableInTouchMode="true"
             android:enabled="true"
             android:focusable="true"
+            android:focusableInTouchMode="true"
             android:gravity="center"
             android:hint="Escribe lo que observas en la imagen"
             android:inputType="text"
@@ -162,8 +162,7 @@
                     android:minHeight="30dp"
                     android:text="Blanco"
                     android:textAlignment="center"
-                    android:textSize="25sp"
-                    android:lineBreakWordStyle="phrase"/>
+                    android:textSize="25sp" />
 
                 <com.google.android.material.checkbox.MaterialCheckBox
                     android:id="@+id/chipCeleste"

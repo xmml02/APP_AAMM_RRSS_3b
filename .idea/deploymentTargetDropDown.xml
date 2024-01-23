@@ -2,10 +2,13 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="Act_3_Eval_1d">
+      <entry key="Act_2_SignUp">
         <State />
       </entry>
-      <entry key="app">
+      <entry key="Prueba">
+        <State />
+      </entry>
+      <entry key="Prueba_DatePicker">
         <State />
       </entry>
     </value>

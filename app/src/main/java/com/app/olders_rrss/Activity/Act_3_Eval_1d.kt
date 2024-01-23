@@ -1,14 +1,14 @@
 package com.app.olders_rrss.Activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.widget.LinearLayout
+import android.widget.PopupWindow
+import androidx.appcompat.app.AppCompatActivity
+import com.app.olders_rrss.R
 import com.app.olders_rrss.databinding.ActivityAct3Eval1dBinding
 import com.app.olders_rrss.databinding.ActivityAct3Eval1dPuBinding
-import android.widget.PopupWindow
-import com.app.olders_rrss.R
 
 class Act_3_Eval_1d : AppCompatActivity() {
 
@@ -42,6 +42,12 @@ class Act_3_Eval_1d : AppCompatActivity() {
         binding.image6Plant.setOnClickListener { ShowPopUpWindow(R.mipmap.img_act_3_eval_1d_plant) }
 
     }
+
+
+    // check ShowPopUpWindow
+
+    // ShowPopUpWindow -> Corresponde a la ventana emergente que se muestra al hacer click en una imagen
+
 
     private fun ShowPopUpWindow(imagen: Int) {
 

@@ -1,0 +1,20 @@
+AlertDialog, DatePickerDialog, TimePickerDialog  >>> parecido a popup
+        https://www.youtube.com/watch?v=YY4qFSqNVnU&list=PL0bfr51v6JJEh1xtggpg57wN6m5Us3cb1&index=32
+        https://www.youtube.com/watch?v=7mSfMYLjyX4&list=PL0bfr51v6JJEh1xtggpg57wN6m5Us3cb1&index=33
+
+Toast >>> ventana emergente que nos avisa con un tiempo
+        https://www.youtube.com/watch?v=FcgQ9jKQebM&list=PL0bfr51v6JJEh1xtggpg57wN6m5Us3cb1&index=12
+Snackbar >>>> ventana emergente mejorada
+        https://www.youtube.com/watch?v=ILd4-i9gbxQ&list=PL0bfr51v6JJEh1xtggpg57wN6m5Us3cb1&index=15
+
+ListView >>> Listado para selecionar
+        https://www.youtube.com/watch?v=AXgdRHD3H6c&list=PL0bfr51v6JJEh1xtggpg57wN6m5Us3cb1&index=13
+
+RecyclerView >>> Listado que administra la memoria
+        https://www.youtube.com/watch?v=ffJlVTK09Wg&list=PL0bfr51v6JJEh1xtggpg57wN6m5Us3cb1&index=21
+
+Fragment >> son como activitis lite que se pueden juntar en una activite
+
+Comportamiento Navegacion en fragmentos
+    4:04
+        https://www.youtube.com/watch?v=vkN3TtIdZgw&list=PL0bfr51v6JJEh1xtggpg57wN6m5Us3cb1&index=40

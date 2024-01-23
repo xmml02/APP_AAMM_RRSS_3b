@@ -1,0 +1,12 @@
+package com.app.olders_rrss.DB
+
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+
+@Database(entities = [ent_usuario::class], version = 1)
+@TypeConverters(Converters::class)
+abstract class clsDB_local : RoomDatabase() {
+    abstract fun dao_usuario(): dao_usuario
+}
+

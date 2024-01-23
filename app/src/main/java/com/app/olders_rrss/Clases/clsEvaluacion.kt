@@ -3,6 +3,7 @@ package com.app.am_rrss.Clases
 import java.util.Date
 
 class clsEvaluacion(
+    val ID_usu: Int,
     val strCodigo: String,
     val strDenominacion: String,
     val datInicio: Date,

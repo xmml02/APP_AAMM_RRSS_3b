@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -26,7 +25,7 @@
         android:id="@+id/cvNombre"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         app:layout_constraintEnd_toStartOf="@id/cvApellido"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvNombreScreen">
@@ -35,7 +34,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="8dp"
-            android:gravity="left"
             android:orientation="vertical">
 
             <TextView
@@ -48,9 +46,11 @@
                 android:id="@+id/etNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autofillHints="Nombre"
                 android:ems="10"
                 android:inputType="text"
-                android:text="" />
+                android:text=""
+                 />
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -63,7 +63,7 @@
         android:id="@+id/cvApellido"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cvNombre"
         app:layout_constraintTop_toBottomOf="@id/tvNombreScreen">
@@ -72,7 +72,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="8dp"
-            android:gravity="left"
             android:orientation="vertical">
 
             <TextView
@@ -85,6 +84,8 @@
                 android:id="@+id/etApellido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autofillHints="name"
+                android:cursorVisible="true"
                 android:ems="10"
                 android:inputType="text"
                 android:text="" />
@@ -99,7 +100,7 @@
         android:id="@+id/cvNacimiento"
         android:layout_width="0dp"
         android:layout_height="75dp"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         app:layout_constraintEnd_toStartOf="@id/cvSexo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvNombre">
@@ -108,7 +109,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
-            android:gravity="left"
             android:orientation="vertical">
 
             <TextView
@@ -117,11 +117,15 @@
                 android:text="Nacimiento"
                 android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/editTextDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/dateNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:inputType="date" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -134,7 +138,7 @@
         android:id="@+id/cvSexo"
         android:layout_width="0dp"
         android:layout_height="75dp"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cvNacimiento"
         app:layout_constraintTop_toBottomOf="@id/cvApellido">
@@ -143,33 +147,34 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="8dp"
-            android:gravity="left"
             android:orientation="vertical">
 
             <RadioGroup
+                android:id="@+id/rgSexo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:ignore="ExtraText"
+                >
 
                 <TextView
+                    android:id="@+id/textSexo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sexo"
                     android:textSize="15sp" />
 
                 <RadioButton
-                    android:id="@+id/rbSexMasc"
+                    android:id="@+id/rgSexMasc"
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_marginLeft="10dp"
-                    android:onClick="radio_button_click"
+                    android:layout_marginStart="10dp"
                     android:text="Masculino" />
 
                 <RadioButton
-                    android:id="@+id/rbSexFem"
+                    android:id="@+id/rgSexFem"
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_marginLeft="10dp"
-                    android:onClick="radio_button_click"
+                    android:layout_marginStart="10dp"
                     android:text="Femenino" />
 
             </RadioGroup>
@@ -183,7 +188,7 @@
         android:id="@+id/cvFrecTecnologia"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         app:layout_constraintEnd_toStartOf="@id/cvExperTecnolog"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvNacimiento">
@@ -191,13 +196,12 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="3dp"
-            android:gravity="left"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
                 android:text="Frecuencia uso tecnología"
                 android:textSize="13sp" />
 
@@ -207,9 +211,16 @@
                 style="?android:attr/ratingBarStyleIndicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:isIndicator="false"
                 android:numStars="5"
                 android:progressTint="#FFCC01"
-                android:rating="3" />
+                android:rating="3"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:stepSize="1" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -221,21 +232,20 @@
         android:id="@+id/cvExperTecnolog"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cvFrecTecnologia"
         app:layout_constraintTop_toBottomOf="@id/cvSexo">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="3dp"
-            android:gravity="left"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
                 android:text="Experiencia tecnológica"
                 android:textSize="13sp" />
 
@@ -244,9 +254,18 @@
                 style="?android:attr/ratingBarStyleIndicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:isIndicator="false"
                 android:numStars="5"
                 android:progressTint="#FFCC01"
-                android:rating="3" />
+                android:rating="3"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:stepSize="1"
+
+                />
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -258,8 +277,8 @@
         android:id="@+id/cvNivelEduc"
         android:layout_width="0dp"
 
-        android:layout_height="220dp"
-        android:layout_margin="8dp"
+        android:layout_height="240dp"
+        android:layout_margin="4dp"
         app:layout_constraintEnd_toStartOf="@id/cvTemasInteres"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvFrecTecnologia">
@@ -268,14 +287,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="3dp"
-            android:gravity="left"
+
             android:orientation="vertical">
 
             <RadioGroup
+                android:id="@+id/rbNivelEducacion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:ignore="ExtraText"
+                >
 
                 <TextView
+                    android:id="@+id/textNivelEduc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nivel educación"
@@ -285,8 +308,8 @@
                     android:id="@+id/rbPrimIncomp"
                     android:layout_width="wrap_content"
                     android:layout_height="27dp"
-                    android:layout_marginLeft="10dp"
-                    android:onClick="radio_button_click"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="10dp"
                     android:text="Primaria incompleta"
                     android:textSize="13sp" />
 
@@ -294,8 +317,7 @@
                     android:id="@+id/rbPrimComp"
                     android:layout_width="wrap_content"
                     android:layout_height="27dp"
-                    android:layout_marginLeft="10dp"
-                    android:onClick="radio_button_click"
+                    android:layout_marginStart="10dp"
                     android:text="Primaria completa"
                     android:textSize="13sp" />
 
@@ -303,8 +325,8 @@
                     android:id="@+id/rbSecIncomp"
                     android:layout_width="wrap_content"
                     android:layout_height="27dp"
-                    android:layout_marginLeft="10dp"
-                    android:onClick="radio_button_click"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="10dp"
                     android:text="Secundaria incompleta"
                     android:textSize="13sp" />
 
@@ -312,8 +334,7 @@
                     android:id="@+id/rbSecComp"
                     android:layout_width="wrap_content"
                     android:layout_height="27dp"
-                    android:layout_marginLeft="10dp"
-                    android:onClick="radio_button_click"
+                    android:layout_marginStart="10dp"
                     android:text="Secundaria completa"
                     android:textSize="13sp" />
 
@@ -321,8 +342,8 @@
                     android:id="@+id/rbTercIncomp"
                     android:layout_width="wrap_content"
                     android:layout_height="27dp"
-                    android:layout_marginLeft="10dp"
-                    android:onClick="radio_button_click"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="10dp"
                     android:text="Terciaria incompleta"
                     android:textSize="13sp" />
 
@@ -330,8 +351,7 @@
                     android:id="@+id/rbTercComp"
                     android:layout_width="wrap_content"
                     android:layout_height="27dp"
-                    android:layout_marginLeft="10dp"
-                    android:onClick="radio_button_click"
+                    android:layout_marginStart="10dp"
                     android:text="Terciaria completa"
                     android:textSize="13sp"
                     tools:ignore="TouchTargetSizeCheck" />
@@ -348,8 +368,8 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cvTemasInteres"
         android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:layout_margin="8dp"
+        android:layout_height="240dp"
+        android:layout_margin="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cvNivelEduc"
         app:layout_constraintTop_toBottomOf="@id/cvExperTecnolog">
@@ -358,10 +378,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="3dp"
-            android:gravity="left"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textTemaInteres"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Temas de interés"
@@ -371,7 +391,8 @@
                 android:id="@+id/cbBienestar"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="10dp"
                 android:text="Bienestar"
                 android:textSize="13sp" />
 
@@ -379,7 +400,7 @@
                 android:id="@+id/cbGastronomia"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:text="Gastronomía"
                 android:textSize="13sp" />
 
@@ -387,7 +408,8 @@
                 android:id="@+id/cbCultura"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="10dp"
                 android:text="Cultura"
                 android:textSize="13sp" />
 
@@ -395,7 +417,7 @@
                 android:id="@+id/cbDeportes"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:text="Deportes"
                 android:textSize="13sp" />
 
@@ -403,7 +425,8 @@
                 android:id="@+id/cbActualidad"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="10dp"
                 android:text="Actualidad"
                 android:textSize="13sp" />
 
@@ -411,7 +434,7 @@
                 android:id="@+id/cbHistoria"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:text="Historia"
                 android:textSize="13sp" />
 
@@ -419,7 +442,8 @@
                 android:id="@+id/cbCiencia"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="10dp"
                 android:text="Ciencia"
                 android:textSize="13sp" />
 
@@ -461,5 +485,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnBack" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
