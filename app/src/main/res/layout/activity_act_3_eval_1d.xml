@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Activity.Act_3_Eval_1d">
+
+    <!--  Cabecera pantalla -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Activ_Login_bg"
+        android:gravity="center"
+        android:padding="9dp"
+        android:text="Evaluación"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        tools:ignore="HardcodedText" />
+    <!--  avance -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="@color/barra_no_avance"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+
+        <TableRow>
+
+            <TextView android:background="@color/barra_recorrido" />
+
+            <TextView android:background="@color/barra_recorrido" />
+
+            <TextView android:background="@color/barra_avance" />
+
+            <TextView />
+
+            <TextView />
+        </TableRow>
+    </TableLayout>
+
+    <!-- SELECTOR DE IMAGENES -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/lblSeleccione"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="15dp"
+            android:padding="3dp"
+            android:text="Seleccione las imágenes para realizar la evaluación"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toStartOf="@id/btnSpeaker_Intrucciones"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/columna_der"/>
+
+        <!--   btnSpeaker_Intrucciones     -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnSpeaker_Intrucciones"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/transparent"
+            android:contentDescription="  "
+            android:src="@drawable/speaker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lblSeleccione"/>
+
+        <LinearLayout
+            android:id="@+id/columna_izq"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/columna_der"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblSeleccione">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="169dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="3dp"
+                app:strokeColor="@color/Activ_Login_bg_tint"
+                app:strokeWidth="2dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_1_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="@color/transparent"
+                    android:backgroundTintMode="screen"
+                    android:contentDescription="  "
+                    android:cropToPadding="true"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/img_act_3_eval_1_phone_red"
+                    android:visibility="visible"
+
+                    />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="169dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="3dp"
+                app:strokeColor="@color/Activ_Login_bg_tint"
+                app:strokeWidth="2dp">
+
+                <ImageButton
+                    android:id="@+id/image_3_sky"
+                    android:layout_width="match_parent"
+                    android:layout_height="169dp"
+                    android:layout_margin="1dp"
+                    android:background="@color/transparent"
+                    android:backgroundTintMode="screen"
+                    android:contentDescription="  "
+                    android:cropToPadding="true"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/img_act_3_eval_1d_sky_blue"
+                    android:visibility="visible" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="169dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="3dp"
+                app:strokeColor="@color/Activ_Login_bg_tint"
+                app:strokeWidth="2dp">
+
+                <ImageButton
+                    android:id="@+id/image_5_bilding"
+                    android:layout_width="match_parent"
+                    android:layout_height="169dp"
+                    android:layout_margin="1dp"
+                    android:background="@color/transparent"
+                    android:backgroundTintMode="screen"
+                    android:contentDescription="  "
+                    android:cropToPadding="true"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/img_act_3_eval_1d_cartelera_city"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@id/image_6_plant" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/columna_der"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/columna_izq"
+            app:layout_constraintTop_toBottomOf="@id/lblSeleccione">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="169dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="3dp"
+                app:strokeColor="@color/Activ_Login_bg_tint"
+                app:strokeWidth="2dp">
+
+                <ImageButton
+                    android:id="@+id/image_2_dog"
+                    android:layout_width="match_parent"
+                    android:layout_height="169dp"
+                    android:layout_margin="1dp"
+                    android:background="@color/transparent"
+                    android:backgroundTintMode="screen"
+                    android:contentDescription="  "
+                    android:cropToPadding="true"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/img_act_3_eval_1d_dog_happy"
+                    android:visibility="visible" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="169dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="3dp"
+                app:strokeColor="@color/Activ_Login_bg_tint"
+                app:strokeWidth="2dp">
+
+                <ImageButton
+                    android:id="@+id/image_4_sunrise"
+                    android:layout_width="match_parent"
+                    android:layout_height="169dp"
+                    android:layout_margin="1dp"
+                    android:background="@color/transparent"
+                    android:backgroundTintMode="screen"
+                    android:contentDescription="  "
+                    android:cropToPadding="true"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/img_act_3_eval_1d_sunrise"
+                    android:visibility="visible" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="169dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="3dp"
+                app:strokeColor="@color/Activ_Login_bg_tint"
+                app:strokeWidth="2dp">
+
+                <ImageButton
+                    android:id="@+id/image_6_plant"
+                    android:layout_width="match_parent"
+                    android:layout_height="169dp"
+                    android:layout_margin="1dp"
+                    android:background="@color/transparent"
+                    android:backgroundTintMode="screen"
+                    android:contentDescription="  "
+                    android:cropToPadding="true"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/img_act_3_eval_1d_plant"
+                    android:visibility="visible" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- BOTONES NAVEGACION -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="5dp"
+        tools:layout_editor_absoluteY="54dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/bordes_redondos_back"
+            android:padding="15dp"
+            android:text="volver"
+            android:textColor="#636161"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnOK"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOK"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/bordes_redondos_ok"
+            android:padding="15dp"
+            android:text="siguiente"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

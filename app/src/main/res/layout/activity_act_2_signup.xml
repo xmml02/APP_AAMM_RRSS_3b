@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Act_2_SignUp">
+
+    <!--  Barra nombre pantalla  -->
+    <TextView
+        android:id="@+id/tvNombreScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Activ_Login_font"
+        android:gravity="center"
+        android:paddingVertical="8dp"
+        android:text="Registro"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        tools:ignore="MissingConstraints" />
+
+    <!-- Nombre -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toStartOf="@id/cvApellido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNombreScreen">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Apellido -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvApellido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cvNombre"
+        app:layout_constraintTop_toBottomOf="@id/tvNombreScreen">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apellido"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/etApellido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Nacimiento -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvNacimiento"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toStartOf="@id/cvSexo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvNombre">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nacimiento"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Sexo -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSexo"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cvNacimiento"
+        app:layout_constraintTop_toBottomOf="@id/cvApellido">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sexo"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rbSexMasc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="radio_button_click"
+                    android:text="Masculino" />
+
+                <RadioButton
+                    android:id="@+id/rbSexFem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="radio_button_click"
+                    android:text="Femenino" />
+
+            </RadioGroup>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Frecuencia uso tecnologia -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFrecTecnologia"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toStartOf="@id/cvExperTecnolog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvNacimiento">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Frecuencia uso tecnología"
+                android:textSize="13sp" />
+
+
+            <RatingBar
+                android:id="@+id/rbFrecTecn"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:progressTint="#FFCC01"
+                android:rating="3" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Experiencia tecnologia -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvExperTecnolog"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cvFrecTecnologia"
+        app:layout_constraintTop_toBottomOf="@id/cvSexo">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="3dp"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Experiencia tecnológica"
+                android:textSize="13sp" />
+
+            <RatingBar
+                android:id="@+id/rbExperTecn"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:progressTint="#FFCC01"
+                android:rating="3" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Nivel Educacion -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvNivelEduc"
+        android:layout_width="0dp"
+
+        android:layout_height="220dp"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toStartOf="@id/cvTemasInteres"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvFrecTecnologia">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nivel educación"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/rbPrimIncomp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="radio_button_click"
+                    android:text="Primaria incompleta"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/rbPrimComp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="radio_button_click"
+                    android:text="Primaria completa"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/rbSecIncomp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="radio_button_click"
+                    android:text="Secundaria incompleta"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/rbSecComp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="radio_button_click"
+                    android:text="Secundaria completa"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/rbTercIncomp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="radio_button_click"
+                    android:text="Terciaria incompleta"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/rbTercComp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="radio_button_click"
+                    android:text="Terciaria completa"
+                    android:textSize="13sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </RadioGroup>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Temas interes -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvTemasInteres"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cvNivelEduc"
+        app:layout_constraintTop_toBottomOf="@id/cvExperTecnolog">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="3dp"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temas de interés"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/cbBienestar"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginLeft="10dp"
+                android:text="Bienestar"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/cbGastronomia"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginLeft="10dp"
+                android:text="Gastronomía"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/cbCultura"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginLeft="10dp"
+                android:text="Cultura"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/cbDeportes"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginLeft="10dp"
+                android:text="Deportes"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/cbActualidad"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginLeft="10dp"
+                android:text="Actualidad"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/cbHistoria"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginLeft="10dp"
+                android:text="Historia"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/cbCiencia"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginLeft="10dp"
+                android:text="Ciencia"
+                android:textSize="13sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Boton back -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/btnBack"
+        android:padding="15dp"
+        android:text="Volver"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnOK"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <!-- Boton Siguiente -->
+    <Button
+        android:id="@+id/btnOK"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/btnOK"
+        android:padding="15dp"
+        android:text="Guardar"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnBack" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

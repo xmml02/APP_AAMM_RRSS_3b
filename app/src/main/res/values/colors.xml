@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_component">#FF5722</color>
+    <color name="background_component_selected">#FFC107</color>
+    <color name="background_app">#011E87</color>
+    <color name="background_button">#CD1414</color>
+    <color name="title_text">#7C7C7C</color>
+
+    <color name="Activ_Login_bg">#135D88</color>
+    <color name="Activ_Login_bg_tint">#C30E425E</color>
+    <color name="Activ_Login_font">#2A50A5</color>
+
+    <color name="Activ_Borders_Obj">#2A50A5</color>
+
+    <color name="btnBack">#CDD2D6</color>
+    <color name="btnOK">#FF9800</color>
+
+    <color name="barra_avance">#71DAB1</color>
+    <color name="barra_no_avance">#C4ECDC</color>
+    <color name="barra_recorrido">#0FA469</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="transparencia">#6C000000</color>
+
+    <color name="brown">#A52A2A</color>
+    <color name="black">#000000</color>
+    <color name="blue">#0000FF</color>
+    <color name="red">#FF0000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="skyBlue">#87CEEB</color>
+    <color name="gray">#808080</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="purple">#800080</color>
+    <color name="orange">#FFA500</color>
+    <color name="green">#53D34F</color>
+
+</resources>

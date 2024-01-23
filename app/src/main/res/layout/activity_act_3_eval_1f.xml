@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Activity.Act_3_Eval_1f">
+
+    <!--  Cabecera pantalla -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Activ_Login_bg"
+        android:gravity="center"
+        android:padding="9dp"
+        android:text="Evaluación"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        tools:ignore="HardcodedText" />
+    <!--  avance -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="@color/barra_no_avance"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+
+        <TableRow>
+
+            <TextView android:background="@color/barra_recorrido" />
+
+            <TextView android:background="@color/barra_recorrido" />
+
+            <TextView android:background="@color/barra_recorrido" />
+
+            <TextView android:background="@color/barra_recorrido" />
+
+            <TextView android:background="@color/barra_avance" />
+        </TableRow>
+    </TableLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/lblInstrucc"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="15dp"
+            android:text="¿Qué son las redes sociales?"
+            android:textColor="@color/black"
+            android:textSize="43sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/btnSpeaker_Intrucciones"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnSpeaker_Intrucciones"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:contentDescription="  "
+            android:drawableEnd="@drawable/speaker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvTemasInteres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="0dp"
+
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/cbBienestar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="Plataformas para conectar y comunicarse en línea"
+                android:textSize="25sp" />
+
+            <CheckBox
+                android:id="@+id/cbGastronomia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Herramientas digitales para compartir información y fotos"
+                android:textSize="25sp" />
+
+            <CheckBox
+                android:id="@+id/cbCultura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="Sitios web para comprar y vender productos"
+                android:textSize="25sp" />
+
+            <CheckBox
+                android:id="@+id/cbDeportes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medios de comunicación como la televisión y la radio"
+                android:textSize="25sp" />
+
+            <CheckBox
+                android:id="@+id/cbActualidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="Espacios virtuales para encontrar noticias y artículos"
+                android:textSize="25sp" />
+
+            <CheckBox
+                android:id="@+id/cbHistoria"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="Aplicaciones móviles para editar fotos y videos"
+                android:textSize="25sp" />
+
+            <CheckBox
+                android:id="@+id/cbCiencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="Plataformas para buscar empleo y hacer contactos profesionales"
+                android:textSize="25sp" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- BOTONES NAVEGACION -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="5dp"
+        tools:layout_editor_absoluteY="54dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/bordes_redondos_back"
+            android:padding="15dp"
+            android:text="volver"
+            android:textColor="#636161"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnOK"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOK"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/bordes_redondos_ok"
+            android:padding="15dp"
+            android:text="finalizar"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
