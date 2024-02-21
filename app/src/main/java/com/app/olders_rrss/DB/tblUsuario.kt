@@ -12,38 +12,41 @@ import java.util.Date
 
 @Entity
 data class ent_usuario(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo("Nombre") val strNombre: String? = "",
     @ColumnInfo("Apellido") val strApellido: String? = "",
-    var booLocal: Boolean = false,
-    var booNotif: Boolean = false,
+    var booLocal: Boolean? = false,
+    var booNotif: Boolean? = false,
     var Sexo: String? = "",
-    @ColumnInfo("Nivel_Educacion") val strNivelEduc: String,
-    @ColumnInfo("Temas_Interes") val strTemasInteres: String,
-    @ColumnInfo("Experiencia_Tecnologica") val intExperTecn: Int,
-    @ColumnInfo("Frecuencia_Uso") val intFrecUso: Int,
-    @ColumnInfo("Correo") val strCorreo: String,
-    @ColumnInfo("Password") val strPassword: String,
-    @ColumnInfo("Nacimiento") var datNacimiento: Date = Date(),
-    var datRegistro: Date = Date(),
+    @ColumnInfo("Nivel_Educacion") val strNivelEduc: String? = "",
+    @ColumnInfo("Temas_Interes") val strTemasInteres: String? = "",
+    @ColumnInfo("Experiencia_Tecnologica") val intExperTecn: Int? = 0,
+    @ColumnInfo("Frecuencia_Uso") val intFrecUso: Int? = 0,
+    @ColumnInfo("Correo") val strCorreo: String? = "",
+    @ColumnInfo("Password") val strPassword: String? = "",
+    @ColumnInfo("Nacimiento") var datNacimiento: Date? = Date(),
+    var datRegistro: Date? = Date(),
     var booAlfabetizado: Boolean? = false,
     var booAudio: Boolean? = true,
     var intBotonPixel: Int? = 10,
-    var booUsuarioApto: Boolean? = true
+    var booUsuarioApto: Boolean? = true,
+    @ColumnInfo("Last_Usu") var booLastUsu: Boolean? = false
 )
 
 @Dao
 interface dao_usuario {
 
-    @Query("SELECT * FROM ent_usuario")
-    suspend fun GetUsuarios(): List<ent_usuario>
-
-    @Query("SELECT * FROM ent_usuario WHERE id IN (:usuarioIDs)")
-    suspend fun GetListEspecifica(usuarioIDs: IntArray): List<ent_usuario>
-
     @Query("SELECT * FROM ent_usuario WHERE Nombre LIKE :first AND Apellido LIKE :last LIMIT 1")
     suspend fun FindByName(first: String, last: String): ent_usuario
 
+    @Query("SELECT * FROM ent_usuario WHERE Last_Usu = 1")
+    suspend fun FindByLastUsu(): ent_usuario
+
+    @Query("SELECT id FROM ent_usuario WHERE Last_Usu = 1")
+    suspend fun FindByLastUsuID(): Int
+
+    @Query("UPDATE ent_usuario SET Last_Usu = 0 WHERE Last_Usu = 1")
+    suspend fun UpdateLastUsuToFalse()
 
     @Query("SELECT * FROM ent_usuario WHERE id = :ID")
     suspend fun FindById(ID: Int): ent_usuario

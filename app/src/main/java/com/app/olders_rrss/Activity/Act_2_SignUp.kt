@@ -216,7 +216,7 @@ class Act_2_SignUp : AppCompatActivity() {
                     usuario.CrearUsuario(context = this@Act_2_SignUp)
                 }
 
-                if (usuario.ComprobarCarga()) {
+                if (usuario.ComprobarCarga()!!) {
                     Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT)
                         .show()
                     startActivity(Intent(this, Act_3_Eval_1a::class.java))

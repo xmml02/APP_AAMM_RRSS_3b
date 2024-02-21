@@ -16,8 +16,10 @@
         android:theme="@style/Theme.AppAdultosMayoresRRSS"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.Act_2_SignUp"
-            android:exported="true">
+            android:name=".Activity.Main"
+            android:exported="true"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.AppAdultosMayoresRRSS">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

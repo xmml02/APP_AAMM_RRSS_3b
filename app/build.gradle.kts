@@ -57,41 +57,26 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("org.jetbrains.kotlin:kotlin-script-runtime:1.9.22")
 
-    // ROOM
- /*   // https://developer.android.com/training/data-storage/room?hl=es-419#kts
+    // GSON
+    implementation("com.google.code.gson:gson:2.10.1")
 
-    implementation("androidx.room:room-runtime:2.6.1")
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
 
-    // To use Kotlin annotation processing tool (kapt)
-    kapt("androidx.room:room-compiler:2.6.1")
-    // To use Kotlin Symbol Processing (KSP)
-    //ksp("androidx.room:room-compiler:2.6.1")
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:2.6.1")
-    // optional - RxJava2 support for Room
-    implementation("androidx.room:room-rxjava2:2.6.1")
-    // optional - RxJava3 support for Room
-    implementation("androidx.room:room-rxjava3:2.6.1")
-    // optional - Guava support for Room, including Optional and ListenableFuture
-    implementation("androidx.room:room-guava:2.6.1")
-    // optional - Paging 3 Integration
-    implementation("androidx.room:room-paging:2.6.1")
-*/
-
+    // Para Room
     // https://www.youtube.com/watch?v=hvjaTQmc2Xo
     implementation("androidx.room:room-ktx:2.6.1")
     implementation("com.google.firebase:protolite-well-known-types:18.0.0")
+    implementation("com.google.firebase:firebase-crashlytics-buildtools:2.9.9")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     kapt("androidx.room:room-compiler:2.6.1")
 
     // Para corutinas
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
 
+// En formato Kotlin DSL (build.gradle.kts)
+    implementation("androidx.room:room-runtime:2.6.1")
+    //kapt("androidx.room:room-compiler:2.4.0")
 
-    //https://www.youtube.com/watch?v=TKZRiq4GDuc
-    //implementation("androidx.room:room-ktx:2.6.1")
-    //implementation("androidx.room:room-runtime:2.6.1")
-    //kapt("androidx.room:room-compiler:2.6.1")
 
 
     //testImplementation("junit:junit:4.13.2")

@@ -26,7 +26,7 @@ class Act_3_Eval_1b : AppCompatActivity() {
 
     private fun InitUI() {
         txtProgress.text = "Si lees esto toca el botón Siguiente"
-        txtProgress.textSize = 10F
+        txtProgress.textSize = 15F
     }
 
     private fun InitComponents() {
@@ -34,8 +34,9 @@ class Act_3_Eval_1b : AppCompatActivity() {
         fun SetSeekBar(seekBar: SeekBar) {
 
             seekBar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
+
                 override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
-                    txtProgress.textSize = 10F + i.toFloat()
+                    txtProgress.textSize = 15F + i.toFloat()
                 }
 
                 override fun onStartTrackingTouch(seekBar: SeekBar) {}
@@ -45,7 +46,7 @@ class Act_3_Eval_1b : AppCompatActivity() {
 
         // VUELVE
         binding.btnBack.setOnClickListener {
-            onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         }
 
         // NAVEGA A PANTALLA EVALUACION

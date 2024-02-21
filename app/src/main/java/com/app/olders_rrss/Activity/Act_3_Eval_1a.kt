@@ -21,16 +21,11 @@ class Act_3_Eval_1a : AppCompatActivity() {
     private fun InitComponents() {
 
         // VUELVE
-        binding.btnBack.setOnClickListener {
-            // boton volver
-            onBackPressedDispatcher.onBackPressed()
-        }
+        binding.btnBack.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
         // NAVEGA A PANTALLA EVALUACION
         binding.btnOK.setOnClickListener {
-            startActivity(
-                Intent(this, Act_3_Eval_1b::class.java)
-            )
+            startActivity(Intent(this, Act_3_Eval_1b::class.java))
         }
     }
 }
