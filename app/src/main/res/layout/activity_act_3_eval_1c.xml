@@ -51,6 +51,7 @@
     </TableLayout>
 
     <TextView
+        android:id="@+id/lblInstrucc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="10dp"
@@ -59,172 +60,191 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/cardview_light_background"
-        android:orientation="vertical">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
-            android:background="@drawable/bordes_oblicuos_opcion">
-
-            <RadioGroup
-                android:id="@+id/rdSelection_A"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <RadioButton
-                    android:id="@+id/rdSelect_A_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="radio_button_click"
-                    android:text="Monte"
-                    android:textSize="30sp" />
-
-                <RadioButton
-                    android:id="@+id/rdSelect_A_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="radio_button_click"
-                    android:text="Casa"
-                    android:textSize="30sp" />
-
-                <RadioButton
-                    android:id="@+id/rdSelect_A_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="radio_button_click"
-                    android:text="Pintura"
-                    android:textSize="30sp" />
-
-                <RadioButton
-                    android:id="@+id/rdSelect_A_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="radio_button_click"
-                    android:text="Pala"
-                    android:textSize="30sp" />
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/btnSpeaker_A"
-                android:layout_width="wrap_content"
-
-                android:layout_height="wrap_content"
-                android:background="@color/transparent"
-                android:contentDescription="Audio 1"
-                android:drawableEnd="@drawable/speaker"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
-            android:background="@drawable/bordes_oblicuos_opcion">
-
-            <RadioGroup
-                android:id="@+id/rdSelection_B"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <RadioButton
-                    android:id="@+id/rdSelect_B_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="radio_button_click"
-                    android:text="Mesaje público"
-                    android:textSize="30sp" />
-
-                <RadioButton
-                    android:id="@+id/rdSelect_B_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="radio_button_click"
-                    android:text="Redes sociales"
-                    android:textSize="30sp" />
-
-                <RadioButton
-                    android:id="@+id/rdSelect_B_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="radio_button_click"
-                    android:text="Amigos"
-                    android:textSize="30sp" />
-
-                <RadioButton
-                    android:id="@+id/rdSelect_B_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="radio_button_click"
-                    android:text="Compartir"
-                    android:textSize="30sp" />
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/btnSpeaker_B"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@color/transparent"
-                android:contentDescription="Audio 2"
-                android:drawableEnd="@drawable/speaker"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <!-- BOTONES NAVEGACION -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginVertical="5dp">
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnBack"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:background="@drawable/bordes_redondos_back"
-            android:padding="15dp"
-            android:text="volver"
-            android:textColor="#636161"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnOK"
-            app:layout_constraintStart_toStartOf="parent" />
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toTopOf="@id/botonesNavegacion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnOK"
-            android:layout_width="0dp"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/cardview_light_background"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/bordes_oblicuos_opcion">
+
+                    <RadioGroup
+                        android:id="@+id/rdSelection_A"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rdSelect_A_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Monte"
+                            android:textSize="30sp" />
+
+                        <RadioButton
+                            android:id="@+id/rdSelect_A_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Casa"
+                            android:textSize="30sp" />
+
+                        <RadioButton
+                            android:id="@+id/rdSelect_A_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pintura"
+                            android:textSize="30sp" />
+
+                        <RadioButton
+                            android:id="@+id/rdSelect_A_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pala"
+                            android:textSize="30sp" />
+                    </RadioGroup>
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnSpeaker_A"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+
+                        android:background="@color/transparent"
+                        android:contentDescription="Audio 1"
+
+                        android:src="@drawable/speaker"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"
+                    android:background="@drawable/bordes_oblicuos_opcion">
+
+                    <RadioGroup
+                        android:id="@+id/rdSelection_B"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rdSelect_B_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mesaje público"
+                            android:textSize="30sp" />
+
+                        <RadioButton
+                            android:id="@+id/rdSelect_B_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Redes sociales"
+                            android:textSize="30sp" />
+
+                        <RadioButton
+                            android:id="@+id/rdSelect_B_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Amigos"
+                            android:textSize="30sp" />
+
+                        <RadioButton
+                            android:id="@+id/rdSelect_B_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Compartir"
+                            android:textSize="30sp" />
+                    </RadioGroup>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnSpeaker_B"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:contentDescription="Audio 2"
+                        android:src="@drawable/speaker"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
+
+        <!-- BOTONES NAVEGACION -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/botonesNavegacion"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:background="@drawable/bordes_redondos_ok"
-            android:padding="15dp"
-            android:text="siguiente"
-            android:textColor="#795548"
-            android:textSize="20sp"
+            android:layout_marginVertical="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btnBack"
-            tools:ignore="HardcodedText" />
+            app:layout_constraintTop_toBottomOf="@id/scroll"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/bordes_redondos_back"
+                android:padding="15dp"
+                android:text="volver"
+                android:textColor="#636161"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnOK"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOK"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/bordes_redondos_ok"
+                android:padding="15dp"
+                android:text="siguiente"
+                android:textColor="#795548"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnBack"
+                tools:ignore="HardcodedText" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

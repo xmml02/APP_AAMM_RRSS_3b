@@ -55,7 +55,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="15dp"
             android:padding="3dp"
-            android:text="Seleccione las imágenes para realizar la evaluación"
+            android:text="Seleccione las imágenes para la evaluación"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -63,7 +63,7 @@
             app:layout_constraintEnd_toStartOf="@id/btnSpeaker_Intrucciones"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/columna_der"/>
+            app:layout_constraintBottom_toBottomOf="@id/btnSpeaker_Intrucciones"/>
 
         <!--   btnSpeaker_Intrucciones     -->
         <androidx.appcompat.widget.AppCompatImageView
@@ -75,7 +75,9 @@
             android:src="@drawable/speaker"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/lblSeleccione"/>
+            app:layout_constraintStart_toEndOf="@id/lblSeleccione"
+            app:layout_constraintBottom_toBottomOf="@id/lblSeleccione"
+            />
 
         <LinearLayout
             android:id="@+id/columna_izq"
@@ -88,7 +90,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="169dp"
+                android:layout_height="140dp"
                 android:layout_margin="5dp"
                 android:backgroundTint="@color/white"
                 app:cardCornerRadius="3dp"
@@ -115,7 +117,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="169dp"
+                android:layout_height="140dp"
                 android:layout_margin="5dp"
                 android:backgroundTint="@color/white"
                 app:cardCornerRadius="3dp"
@@ -125,7 +127,7 @@
                 <ImageButton
                     android:id="@+id/image_3_sky"
                     android:layout_width="match_parent"
-                    android:layout_height="169dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="1dp"
                     android:background="@color/transparent"
                     android:backgroundTintMode="screen"
@@ -138,7 +140,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="169dp"
+                android:layout_height="140dp"
                 android:layout_margin="5dp"
                 android:backgroundTint="@color/white"
                 app:cardCornerRadius="3dp"
@@ -148,7 +150,7 @@
                 <ImageButton
                     android:id="@+id/image_5_bilding"
                     android:layout_width="match_parent"
-                    android:layout_height="169dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="1dp"
                     android:background="@color/transparent"
                     android:backgroundTintMode="screen"
@@ -173,7 +175,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="169dp"
+                android:layout_height="140dp"
                 android:layout_margin="5dp"
                 android:backgroundTint="@color/white"
                 app:cardCornerRadius="3dp"
@@ -183,7 +185,7 @@
                 <ImageButton
                     android:id="@+id/image_2_dog"
                     android:layout_width="match_parent"
-                    android:layout_height="169dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="1dp"
                     android:background="@color/transparent"
                     android:backgroundTintMode="screen"
@@ -196,7 +198,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="169dp"
+                android:layout_height="140dp"
                 android:layout_margin="5dp"
                 android:backgroundTint="@color/white"
                 app:cardCornerRadius="3dp"
@@ -206,7 +208,7 @@
                 <ImageButton
                     android:id="@+id/image_4_sunrise"
                     android:layout_width="match_parent"
-                    android:layout_height="169dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="1dp"
                     android:background="@color/transparent"
                     android:backgroundTintMode="screen"
@@ -219,7 +221,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="169dp"
+                android:layout_height="140dp"
                 android:layout_margin="5dp"
                 android:backgroundTint="@color/white"
                 app:cardCornerRadius="3dp"
@@ -229,7 +231,7 @@
                 <ImageButton
                     android:id="@+id/image_6_plant"
                     android:layout_width="match_parent"
-                    android:layout_height="169dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="1dp"
                     android:background="@color/transparent"
                     android:backgroundTintMode="screen"

@@ -28,7 +28,7 @@
     <!-- OPCIONES ENTRADA TEXTO -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_marginVertical="10dp"
         android:background="@color/white"
         app:cardCornerRadius="15dp">
@@ -36,17 +36,17 @@
         <EditText
             android:id="@+id/textoDescripcion"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:clickable="true"
-            android:focusableInTouchMode="true"
-            android:enabled="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:hint="Escribe lo que observas en la imagen"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textSize="25sp" />
+            android:layout_height="match_parent"
 
+            android:ems="10"
+            android:inputType="textMultiLine"
+
+            android:hint="Ingrese una descripción"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:paddingHorizontal="15dp"
+
+            />
     </androidx.cardview.widget.CardView>
 
     <!-- OPCIONES COLORES -->
@@ -82,7 +82,7 @@
                 app:layout_constraintTop_toBottomOf="@id/Seleccion_colores">
 
                 <com.google.android.material.checkbox.MaterialCheckBox
-                    android:id="@+id/checkboxMarron"
+                    android:id="@+id/chipMarron"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/brown"
@@ -163,7 +163,7 @@
                     android:text="Blanco"
                     android:textAlignment="center"
                     android:textSize="25sp"
-                    android:lineBreakWordStyle="phrase"/>
+                    />
 
                 <com.google.android.material.checkbox.MaterialCheckBox
                     android:id="@+id/chipCeleste"

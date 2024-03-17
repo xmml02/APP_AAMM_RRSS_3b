@@ -2,16 +2,7 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="Act_2_SignUp">
-        <State />
-      </entry>
       <entry key="Main">
-        <State />
-      </entry>
-      <entry key="Prueba">
-        <State />
-      </entry>
-      <entry key="Prueba_DatePicker">
         <State />
       </entry>
     </value>

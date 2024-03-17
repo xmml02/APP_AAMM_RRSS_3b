@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".Activity.Act_3_Eval_1f">
+    tools:context=".Activity.Act_3_Eval_1g">
 
     <!--  Cabecera pantalla -->
     <TextView
@@ -37,7 +37,7 @@
 
             <TextView android:background="@color/barra_recorrido" />
 
-            <TextView android:background="@color/barra_avance" />
+            <TextView android:background="@color/barra_recorrido" />
         </TableRow>
     </TableLayout>
 
@@ -50,7 +50,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:paddingHorizontal="15dp"
-            android:text="¿Qué son las redes sociales?"
+            android:text="Quedaron evaluaciones pendientes, ¿quieres continuar?"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -71,100 +71,32 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
-        <ScrollView
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/scroll"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:fillViewport="true"
-            app:layout_constraintBottom_toTopOf="@id/botonesNavegacion"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="5dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:scrollbars="vertical"
-            android:scrollbarStyle="insideOverlay"
+            app:layout_constraintBottom_toTopOf="@id/botonesNavegacion"
+
             >
 
-            <androidx.cardview.widget.CardView
+            <ListView
+                android:id="@+id/listEvalPend"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="5dp"
+                android:layout_height="match_parent"
+                android:divider="@color/barra_avance"
+                android:dividerHeight="1dp"
+                android:padding="5dp"
+                android:scrollbars="vertical"
+                android:visibility="visible" />
 
-                >
+        </androidx.cardview.widget.CardView>
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/radioGroup"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="vertical">
-
-                    <CheckBox
-                        android:id="@+id/cb1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/gray"
-                        android:text="Plataformas para conectar y comunicarse en línea"
-                        android:textColor="@color/white"
-                        android:textSize="25sp" />
-
-                    <CheckBox
-                        android:id="@+id/cb2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Herramientas digitales para compartir información y fotos"
-                        android:textSize="25sp" />
-
-                    <CheckBox
-                        android:id="@+id/cb3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/gray"
-                        android:text="Sitios web para comprar y vender productos"
-                        android:textColor="@color/white"
-                        android:textSize="25sp" />
-
-                    <CheckBox
-                        android:id="@+id/cb4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Medios de comunicación como la televisión y la radio"
-                        android:textSize="25sp" />
-
-                    <CheckBox
-                        android:id="@+id/cb5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/gray"
-                        android:text="Espacios virtuales para encontrar noticias y artículos"
-                        android:textColor="@color/white"
-                        android:textSize="25sp" />
-
-                    <CheckBox
-                        android:id="@+id/cb6"
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-                        android:text="Aplicaciones móviles para editar fotos y videos"
-                        android:textSize="25sp" />
-
-                    <CheckBox
-                        android:id="@+id/cb7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/gray"
-                        android:text="Plataformas para buscar empleo y hacer contactos profesionales"
-                        android:textColor="@color/white"
-                        android:textSize="25sp" />
-
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-            </androidx.cardview.widget.CardView>
-
-        </ScrollView>
 
         <!-- BOTONES NAVEGACION -->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -173,8 +105,8 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/scroll"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scroll"
 
             >
 
@@ -189,6 +121,7 @@
                 android:textColor="#636161"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/btnOK"
                 app:layout_constraintStart_toStartOf="parent" />

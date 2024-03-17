@@ -1,6 +1,7 @@
 package com.app.olders_rrss.DB
 
 import androidx.room.TypeConverter
+import com.app.olders_rrss.Clases.screenActiv
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.util.Date

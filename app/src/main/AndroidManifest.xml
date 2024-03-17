@@ -5,7 +5,10 @@
 
     <dist:module dist:instant="true" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,17 +18,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAdultosMayoresRRSS"
         tools:targetApi="31">
+
         <activity
             android:name=".Activity.Main"
             android:exported="true"
-            android:label="@string/title_activity_main"
+            android:label="Educando adultos mayores en RRSS"
             android:theme="@style/Theme.AppAdultosMayoresRRSS">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activity.Act_1_Welcome" />
+        <activity android:name=".Activity.Act_2_SignUp" />
+        <activity android:name=".Activity.Act_3_Eval_1a" />
+        <activity android:name=".Activity.Act_3_Eval_1b" />
+        <activity android:name=".Activity.Act_3_Eval_1c" />
+        <activity android:name=".Activity.Act_3_Eval_1d" />
+        <activity android:name=".Activity.Act_3_Eval_1e" />
+        <activity android:name=".Activity.Act_3_Eval_1f" />
+        <activity android:name=".Activity.Act_3_Eval_1g" />
     </application>
 
 </manifest>

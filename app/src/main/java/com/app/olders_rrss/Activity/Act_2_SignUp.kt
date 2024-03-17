@@ -2,13 +2,17 @@ package com.app.olders_rrss.Activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.lifecycleScope
+
 import com.app.am_rrss.Clases.clsUsuario
+import com.app.olders_rrss.Clases.app
 import com.app.olders_rrss.databinding.ActivityAct2SignupBinding
 import com.app.olders_rrss.databinding.ActivityAct2SignupPuDateBinding
 import kotlinx.coroutines.launch
@@ -18,8 +22,6 @@ class Act_2_SignUp : AppCompatActivity() {
 
     private lateinit var binding: ActivityAct2SignupBinding
     private lateinit var binding_pu: ActivityAct2SignupPuDateBinding
-    private lateinit var usuario: clsUsuario
-    //private lateinit var dbRoom: clsDB_local
 
     private var strNombre: String? = ""
     private var strApellido: String? = ""
@@ -34,13 +36,15 @@ class Act_2_SignUp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         datNacimiento.set(1950, 5, 15)
+
         binding = ActivityAct2SignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding_pu = ActivityAct2SignupPuDateBinding.inflate(layoutInflater)
 
         InitListeners()
-
     }
 
     private fun InitListeners() {
@@ -53,7 +57,6 @@ class Act_2_SignUp : AppCompatActivity() {
                 }
             }
         }
-
         // Apellido -Error
         binding.etApellido.setOnFocusChangeListener { _, hasFocus ->
             if (!hasFocus) {
@@ -62,7 +65,6 @@ class Act_2_SignUp : AppCompatActivity() {
                 }
             }
         }
-
         // Fecha Nacimiento -> PopUp
         binding.dateNacimiento.setOnClickListener {
 
@@ -92,7 +94,6 @@ class Act_2_SignUp : AppCompatActivity() {
             binding_pu.btnOK.setOnClickListener { popupWindow.dismiss() }
             binding.dateNacimiento.error = null
         }
-
         // Sexo
         binding.rgSexo.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
@@ -101,17 +102,14 @@ class Act_2_SignUp : AppCompatActivity() {
             }
             binding.textSexo.error = null
         }
-
         // Frecuencia de uso de tecnología
         binding.rbFrecTecn.setOnRatingBarChangeListener { _, rating, _ ->
             intFreqTecn = rating.toInt()
         }
-
         // Experiencia con tecnología
         binding.rbExperTecn.setOnRatingBarChangeListener { _, rating, _ ->
             intExperTecn = rating.toInt()
         }
-
         // TEMAS DE INTERES
         binding.cbBienestar.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -169,7 +167,6 @@ class Act_2_SignUp : AppCompatActivity() {
             }
             binding.textTemaInteres.error = null
         }
-
         // NIVEL DE EDUCACION
         binding.rbNivelEducacion.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
@@ -182,11 +179,8 @@ class Act_2_SignUp : AppCompatActivity() {
             }
             binding.textNivelEduc.error = null
         }
-
         // VOLVER
         binding.btnBack.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
-
-
         // GUARDAR Y SIGUIENTE
         binding.btnOK.setOnClickListener {
 
@@ -195,32 +189,43 @@ class Act_2_SignUp : AppCompatActivity() {
 
             // verificar si las variables estan completas y si lo estan, pasar a la siguiente actividad
             if (booNacimSelect && strNombre != "" && strApellido != "" && strSexo != "" &&
-                strNivelEducacion != "" && strTemaInteres != "") {
-
-                usuario = clsUsuario(
-                    strNombre = strNombre!!,
-                    strApellido = strApellido!!,
-                    datNacimiento = datNacimiento.time,
-                    strNivelEduc = strNivelEducacion!!,
-                    strTemasInteres = strTemaInteres!!,
-                    intExperTecn = intExperTecn,
-                    intFrecUso = intFreqTecn,
-                    strCorreo = "",
-                    strPassword = "",
-                    datRegistro = Calendar.getInstance().time,
-                    booLocal = true,
-                    booNotif = true
-                )
+                strNivelEducacion != "" && strTemaInteres != ""
+            ) {
 
                 lifecycleScope.launch {
-                    usuario.CrearUsuario(context = this@Act_2_SignUp)
-                }
 
-                if (usuario.ComprobarCarga()!!) {
-                    Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT)
-                        .show()
-                    startActivity(Intent(this, Act_3_Eval_1a::class.java))
-                } else Toast.makeText(this, "Error al registrar usuario", Toast.LENGTH_SHORT).show()
+                    app.usuario = clsUsuario(
+                        strNombre = strNombre!!,
+                        strApellido = strApellido!!,
+                        datNacimiento = datNacimiento.time,
+                        strNivelEduc = strNivelEducacion!!,
+                        strTemasInteres = strTemaInteres!!,
+                        intExperTecn = intExperTecn,
+                        intFrecUso = intFreqTecn,
+                        strCorreo = "",
+                        strPassword = "",
+                        datRegistro = Calendar.getInstance().time,
+                        booLocal = true,
+                        booNotif = true
+                    )
+                    app.usuario?.CrearUsuario(context = this@Act_2_SignUp)
+
+                    if (app.usuario?.ComprobarCarga()!!) {
+                        Toast.makeText(
+                            this@Act_2_SignUp,
+                            "Usuario registrado correctamente",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                        Log.d("PRUEBA", app.usuario.toString())
+                        startActivity(Intent(this@Act_2_SignUp, Act_3_Eval_1a::class.java))
+
+                    } else Toast.makeText(
+                        this@Act_2_SignUp,
+                        "Error al registrar usuario",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
 
             } else {
 

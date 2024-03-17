@@ -8,7 +8,10 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.PrimaryKey
 import androidx.room.Query
+import androidx.room.Update
 import java.util.Date
+
+import android.app.Application
 
 @Entity
 data class ent_usuario(
@@ -29,6 +32,7 @@ data class ent_usuario(
     var booAlfabetizado: Boolean? = false,
     var booAudio: Boolean? = true,
     var intBotonPixel: Int? = 10,
+    var fltSizeFont: Float? = 15F,
     var booUsuarioApto: Boolean? = true,
     @ColumnInfo("Last_Usu") var booLastUsu: Boolean? = false
 )
@@ -56,6 +60,9 @@ interface dao_usuario {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertUsu(vararg usuario: ent_usuario)
+
+    @Update
+    suspend fun updateUsu(usuario: ent_usuario)
 
     @Delete
     suspend fun delete(usuario: ent_usuario)
